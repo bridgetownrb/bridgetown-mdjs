@@ -7,11 +7,14 @@ A Bridgetown plugin to add Kramdown-based support for Markdown With JavaScript (
 ~~~ markdown
 # Introducing mdjs
 
+Let's import some components from Skypack!
+
 ```js script
 import SlIcon from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/components/icon/icon.js"
 import SlIconButton from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/components/icon-button/icon-button.js"
-setBasePath("https://cdn.skypack.dev/@shoelace-style/shoelace/dist")
+import { setBasePath } from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/utilities/base-path.js"
 
+setBasePath("https://cdn.skypack.dev/@shoelace-style/shoelace/dist")
 SlIcon.register()
 SlIconButton.register()
 ```
