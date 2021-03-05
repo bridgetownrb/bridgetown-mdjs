@@ -22,6 +22,14 @@ SlIconButton.register()
 ## Hello from Shoelace!
 
 <sl-icon-button name="emoji-smile" label="Yo!"></sl-icon-button>
+
+And it's easy to change the DOM…
+
+<aside id="hey-hey"></aside>
+
+```js script
+document.querySelector("#hey-hey").innerHTML = "<p>You you!</p>"
+```
 ~~~
 
 ## Installation
