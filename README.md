@@ -2,14 +2,16 @@
 
 A [Bridgetown](https://www.bridgetownrb.com) plugin to add Kramdown-based support for [Markdown JavaScript (mdjs)](https://rocket.modern-web.dev/docs/markdown-javascript/overview/).
 
+mdjs is a format which allows you to write executable JavaScript from within Markdown files. The mdsj-compatible parser will extract any fenced code block marked as `js script` and later include the extraction(s) within a `<script type="module">` tag at the bottom of the page layout. This means you can import libraries and web components and define various bits of JS inline with your Markdown content.
 
+_Requires Bridgetown 0.21 or higher._
 
 ## Installation
 
 Run this command to add this plugin to your site's Gemfile:
 
 ```shell
-$ bundle add bridgtown-mdjs -g bridgetown_plugins
+$ bundle add bridgetown-mdjs -g bridgetown_plugins
 ```
 
 Then add either a Liquid tag or Ruby helper to your default layout right below the main content.
@@ -30,7 +32,7 @@ Then add either a Liquid tag or Ruby helper to your default layout right below t
 
 ## Usage
 
-The plugin will perform the necessary extractions via the [kramdown-parser-gfm-extractions](https://github.com/bridgetownrb/kramdown-parser-gfm-extractions) add-on to any Markdown file in your Bridgetown site.
+The plugin will perform the necessary extractions (via the [kramdown-parser-gfm-extractions](https://github.com/bridgetownrb/kramdown-parser-gfm-extractions) add-on) to any Markdown file in your Bridgetown site.
 
 Here's an example Markdown file where you can see mdjs in action:
 
