@@ -25,7 +25,7 @@ module BridgetownMdjs
       end
 
       if jscode.present?
-        return <<~HTML
+        return <<~HTML.html_safe
           <script type="module">
           #{jscode}</script>
         HTML
