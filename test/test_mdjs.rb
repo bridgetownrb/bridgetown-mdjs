@@ -38,4 +38,3 @@ class TestMdjs < Minitest::Test
     File.read(__dir__ + "/fixture/output/index.html")
   end
 end
-

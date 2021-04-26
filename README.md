@@ -2,31 +2,7 @@
 
 A [Bridgetown](https://www.bridgetownrb.com) plugin to add Kramdown-based support for [Markdown JavaScript (mdjs)](https://rocket.modern-web.dev/docs/markdown-javascript/overview/).
 
-~~~markdown
-# Introducing mdjs
 
-Let's import some components from Skypack!
-
-```js script
-import SlIcon from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/components/icon/icon.js"
-import SlIconButton from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/components/icon-button/icon-button.js"
-import { setBasePath } from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/utilities/base-path.js"
-
-setBasePath("https://cdn.skypack.dev/@shoelace-style/shoelace/dist")
-```
-
-## Hello from Shoelace!
-
-<sl-icon-button name="emoji-smile" label="Yo!"></sl-icon-button>
-
-And it's easy to change the DOM…
-
-<aside id="hey-hey"></aside>
-
-```js script
-document.querySelector("#hey-hey").innerHTML = "<p>You you!</p>"
-```
-~~~
 
 ## Installation
 
@@ -56,18 +32,50 @@ Then add either a Liquid tag or Ruby helper to your default layout right below t
 
 The plugin will perform the necessary extractions via the [kramdown-parser-gfm-extractions](https://github.com/bridgetownrb/kramdown-parser-gfm-extractions) add-on to any Markdown file in your Bridgetown site.
 
+Here's an example Markdown file where you can see mdjs in action:
+
+~~~markdown
+# Introducing mdjs
+
+Let's import some components from Skypack!
+
+```js script
+import SlIcon from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/components/icon/icon.js"
+import SlIconButton from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/components/icon-button/icon-button.js"
+import { setBasePath } from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/utilities/base-path.js"
+
+setBasePath("https://cdn.skypack.dev/@shoelace-style/shoelace/dist")
+```
+
+## Hello from Shoelace!
+
+<sl-icon-button name="emoji-smile" label="Yo!"></sl-icon-button>
+
+And it's easy to change the DOM…
+
+<aside id="hey-hey"></aside>
+
+```js script
+document.querySelector("#hey-hey").innerHTML = "<p>You you!</p>"
+```
+~~~
+
 ### Optional configuration options
 
-By default, 
+By default, extraction tags (inert, using `template`) aren't included in the rendered output HTML. You can change those options inside the `kramdown` namespace in `bridgetown.config.yml`. See [kramdown-parser-gfm-extractions](https://github.com/bridgetownrb/kramdown-parser-gfm-extractions) README for further details.
 
 ## Testing
 
-* Run `bundle exec rspec` to run the test suite
-* Or run `script/cibuild` to validate with Rubocop and test with rspec together.
+* Run `bundle exec rake test` to run the test suite
+* Run `rubocop` to check for any style offenses.
+
+## Releasing
+
+* Run `bundle exec rake test_and_release` to verify rubocop and tests before releasing a new gem.
 
 ## Contributing
 
-1. Fork it (https://github.com/username/my-awesome-plugin/fork)
+1. Fork it (https://github.com/bridgetownrb/bridgetown-mdjs/fork)
 2. Clone the fork using `git clone` to your local development machine.
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)

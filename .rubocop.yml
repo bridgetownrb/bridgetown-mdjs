@@ -10,7 +10,6 @@ AllCops:
 
   Exclude:
     - .gitignore
-    - .rspec
     - .rubocop.yml
 
     - Gemfile.lock

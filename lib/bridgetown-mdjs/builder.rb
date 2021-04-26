@@ -31,7 +31,7 @@ module BridgetownMdjs
         HTML
       end
 
-      return jscode
+      jscode
     end
   end
 end
