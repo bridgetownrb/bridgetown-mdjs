@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = BridgetownMdjs::VERSION
   spec.author        = "Bridgetown Team"
   spec.email         = "maintainers@bridgetownrb.com"
-  spec.summary       = "Kramdown-based support for Markdown With JavaScript (mdjs)"
+  spec.summary       = "Kramdown-based support for Markdown JavaScript (mdjs) in Bridgetown"
   spec.homepage      = "https://github.com/bridgetownrb/bridgetown-mdjs"
   spec.license       = "MIT"
 
@@ -17,12 +17,9 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.5.0"
 
-  spec.add_dependency "bridgetown", ">= 0.20", "< 2.0"
+  spec.add_dependency "bridgetown", ">= 0.21.0.beta1", "< 2.0"
   spec.add_dependency "kramdown-parser-gfm-extractions", "~> 1.0"
 
   spec.add_development_dependency "bundler"
-  spec.add_development_dependency "nokogiri", "~> 1.6"
-  spec.add_development_dependency "rake", "~> 12.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop-bridgetown", "~> 0.2"
 end

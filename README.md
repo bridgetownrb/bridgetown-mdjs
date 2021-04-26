@@ -1,10 +1,8 @@
 # bridgetown-mdjs
 
-A Bridgetown plugin to add Kramdown-based support for Markdown With JavaScript (mdjs).
+A [Bridgetown](https://www.bridgetownrb.com) plugin to add Kramdown-based support for [Markdown JavaScript (mdjs)](https://rocket.modern-web.dev/docs/markdown-javascript/overview/).
 
-**UNDER CONSTRUCTION**
-
-~~~ markdown
+~~~markdown
 # Introducing mdjs
 
 Let's import some components from Skypack!
@@ -15,8 +13,6 @@ import SlIconButton from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/
 import { setBasePath } from "https://cdn.skypack.dev/@shoelace-style/shoelace/dist/utilities/base-path.js"
 
 setBasePath("https://cdn.skypack.dev/@shoelace-style/shoelace/dist")
-SlIcon.register()
-SlIconButton.register()
 ```
 
 ## Hello from Shoelace!
@@ -58,13 +54,11 @@ Then add either a Liquid tag or Ruby helper to your default layout right below t
 
 ## Usage
 
-The plugin will
+The plugin will perform the necessary extractions via the [kramdown-parser-gfm-extractions](https://github.com/bridgetownrb/kramdown-parser-gfm-extractions) add-on to any Markdown file in your Bridgetown site.
 
 ### Optional configuration options
 
-The plugin will automatically use any of the following metadata variables if they are present in your site's `_data/site_metadata.yml` file.
-
-…
+By default, 
 
 ## Testing
 

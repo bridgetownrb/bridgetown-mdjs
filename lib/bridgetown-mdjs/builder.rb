@@ -3,22 +3,16 @@
 module BridgetownMdjs
   class Builder < Bridgetown::Builder
     def build
-      liquid_tag "sample_plugin" do
-        "This plugin works!"
-      end
-    end
-  end
-end
+      # Set the kramdown input to use the extractions parser
+      site.config.kramdown.input = "GFMExtractions"
 
-class BridgetownMdjs
-  class Builder < Bridgetown::Builder
-    def build
-      method(:process_extractions).tap do |m|
+      # Obtain method as a proc and call it from within either the Liquid or Ruby helper contexts
+      method(:process_extractions).tap do |process_the|
         liquid_tag "mdjs_script" do |_attributes, tag|
-          m.(tag.context.registers[:page][:markdown_extractions])
+          process_the.(tag.context.registers[:page][:markdown_extractions])
         end
         helper "mdjs_script", helpers_scope: true do
-          m.(view.page.data.markdown_extractions)
+          process_the.(view.page.data.markdown_extractions)
         end
       end
     end
@@ -31,13 +25,13 @@ class BridgetownMdjs
       end
 
       if jscode.present?
-        <<~HTML
+        return <<~HTML
           <script type="module">
           #{jscode}</script>
         HTML
-      else
-        ""
       end
+
+      return jscode
     end
   end
 end
