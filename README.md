@@ -85,19 +85,3 @@ By default, extraction tags (inert, using `template`) aren't included in the ren
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new Pull Request
-
-----
-
-## Releasing (you can delete this section in your own plugin repo)
-
-To release a new version of the plugin, simply bump up the version number in both `version.rb` and
-`package.json`, and then run `script/release`. This will require you to have a registered account
-with both the [RubyGems.org](https://rubygems.org) and [NPM](https://www.npmjs.com) registries.
-You can optionally remove the `package.json` and `frontend` folder if you don't need to package frontend
-assets for Webpack.
-
-If you run into any problems or need further guidance, please check out our [Bridgetown community resources](https://www.bridgetownrb.com/docs/community)
-where friendly folks are standing by to help you build and release your plugin or theme.
-
-**NOTE:** make sure you add the `bridgetown-plugin` [topic](https://github.com/topics/bridgetown-plugin) to your
-plugin's GitHub repo so the plugin or theme will show up on [Bridgetown's official Plugin Directory](https://www.bridgetownrb.com/plugins)! (There may be a day or so delay before you see it appear.)
