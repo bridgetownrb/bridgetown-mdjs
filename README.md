@@ -1,5 +1,10 @@
 # bridgetown-mdjs
 
+> [!WARNING]
+> This plugin is considered "as-is" and I don't anticpate developing it any further. If you submit an interesting PR, I'm willing to merge it, but otherwise…it's done.
+
+----
+
 A [Bridgetown](https://www.bridgetownrb.com) plugin to add Kramdown-based support for [Markdown JavaScript (mdjs)](https://rocket.modern-web.dev/docs/markdown-javascript/overview/).
 
 mdjs is a format which allows you to write executable JavaScript from within Markdown files. The mdjs-compatible parser will extract any fenced code block marked as `js script` and later include the extraction(s) within a `<script type="module">` tag at the bottom of the page layout. This means you can import libraries and web components and define various bits of JS inline with your Markdown content.
